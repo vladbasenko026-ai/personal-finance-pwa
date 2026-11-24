@@ -1,0 +1,25 @@
+ 
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Finance PWA</title>
+</head>
+<body>
+    <h1>Особисті фінанси</h1>
+    <h2>Облік доходів та витрат</h2>
+    <input type="number" id="amount" placeholder="Сума">
+    <button onclick="addTransaction()">Додати</button>
+    <ul id="transactions"></ul>
+
+    <script>
+        function addTransaction() {
+            const amount = document.getElementById('amount').value;
+            if (amount === '' || Number(amount) <= 0) return;
+            const item = document.createElement('li');
+            item.textContent = amount + ' грн';
+            document.getElementById('transactions').appendChild(item);
+        }
+    </script>
+</body>
+</html>
